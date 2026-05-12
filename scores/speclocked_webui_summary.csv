@@ -1,0 +1,4 @@
+condition,n_trials,compile,stitch,sim,stitch_rate,stitch_ci95_lo,stitch_ci95_hi
+claude_web,3,3/3,3/3,3/3,1.000,0.438,1.000
+gemini,3,2/3,2/3,2/3,0.667,0.208,0.939
+gpt,3,3/3,3/3,3/3,1.000,0.438,1.000

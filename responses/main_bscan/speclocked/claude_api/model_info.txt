@@ -1,0 +1,9 @@
+bedrock_model_id: us.anthropic.claude-opus-4-7
+region: us-east-1
+collected: 2026-05-06T02:37:11.253775
+temperature: 1.0
+max_tokens: 32000
+surface: Bedrock API (boto3)
+prompt_file: paper/web_ai_eval/PROMPTS_SPECLOCKED.md
+prompt_ids: P1_PS,P2_PS,P3_PS
+trials_per_prompt: 10

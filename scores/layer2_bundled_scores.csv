@@ -1,0 +1,16 @@
+model,trial,compile_ok,sim_ok,tests_passed,tests_failed,category
+claude_api,1,0,0,0,0,compile_fail
+claude_api,2,0,0,0,0,compile_fail
+claude_api,3,0,0,0,0,compile_fail
+claude46_api,1,0,0,0,0,compile_fail
+claude46_api,2,0,0,0,0,compile_fail
+claude46_api,3,0,0,0,0,compile_fail
+claude,1,0,0,0,0,compile_fail
+claude,2,0,0,0,0,compile_fail
+claude,3,0,0,0,0,compile_fail
+gpt,1,0,0,0,0,compile_fail
+gpt,2,0,0,0,0,compile_fail
+gpt,3,0,0,0,0,compile_fail
+gemini,1,0,0,0,0,compile_fail
+gemini,2,0,0,0,0,compile_fail
+gemini,3,0,0,0,0,compile_fail

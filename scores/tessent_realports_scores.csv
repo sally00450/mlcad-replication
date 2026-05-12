@@ -1,0 +1,7 @@
+condition,trial,padlib,read,elab,dftcfg,drc,icl,write_icl,patspec,report,total
+claude_api,1,1,1,1,1,1,0,0,0,0,5
+claude_api,2,1,1,1,1,1,0,0,0,0,5
+claude_api,3,1,1,1,1,1,0,0,0,0,5
+claude46_api,1,1,1,1,1,1,0,0,0,0,5
+claude46_api,2,1,1,1,1,1,0,0,0,0,5
+claude46_api,3,1,1,1,1,1,0,0,0,0,5

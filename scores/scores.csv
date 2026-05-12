@@ -1,0 +1,106 @@
+model,prompt,trial,score,kind,compile_ok,sim_ok,tests_passed,tests_failed,fix_lines,notes,timestamp
+claude,P1,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:33
+claude,P1,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:33
+claude,P1,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:33
+claude,P2,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:33
+claude,P2,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:34
+claude,P2,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:34
+claude,P3,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:34
+claude,P3,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:34
+claude,P3,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:34
+claude,P4,1,1,RTL,0,0,0,0,3,10 compile errors; structural,2026-04-21T07:57:34
+claude,P4,2,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:35
+claude,P4,3,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:35
+claude,P5,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:35
+claude,P5,2,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:35
+claude,P5,3,1,TB,1,1,0,10,0,10 tests failed,2026-04-21T07:57:35
+claude,P5b,1,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:36
+claude,P5b,2,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:36
+claude,P5b,3,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:36
+claude,P6,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:36
+claude,P6,2,0,TB,0,0,0,0,0,TB compile failed (3 errors),2026-04-21T07:57:36
+claude,P6,3,0,TB,0,0,0,0,0,TB compile failed (4 errors),2026-04-21T07:57:36
+claude_api,P1,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:37
+claude_api,P1,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:37
+claude_api,P1,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:37
+claude_api,P2,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:37
+claude_api,P2,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:37
+claude_api,P2,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:38
+claude_api,P3,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:38
+claude_api,P3,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:38
+claude_api,P3,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:38
+claude_api,P4,1,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:38
+claude_api,P4,2,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:39
+claude_api,P4,3,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:39
+claude_api,P5,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:39
+claude_api,P5,2,1,TB,1,1,0,8,0,8 tests failed,2026-04-21T07:57:39
+claude_api,P5,3,1,TB,1,1,0,8,0,8 tests failed,2026-04-21T07:57:39
+claude_api,P5b,1,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:40
+claude_api,P5b,2,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:40
+claude_api,P5b,3,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:40
+claude_api,P6,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:40
+claude_api,P6,2,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:40
+claude_api,P6,3,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:41
+claude46_api,P1,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:41
+claude46_api,P1,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:41
+claude46_api,P1,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:41
+claude46_api,P2,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:41
+claude46_api,P2,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:41
+claude46_api,P2,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:42
+claude46_api,P3,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:42
+claude46_api,P3,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:42
+claude46_api,P3,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:42
+claude46_api,P4,1,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:42
+claude46_api,P4,2,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:43
+claude46_api,P4,3,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:43
+claude46_api,P5,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:43
+claude46_api,P5,2,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:43
+claude46_api,P5,3,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:43
+claude46_api,P5b,1,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:43
+claude46_api,P5b,2,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:44
+claude46_api,P5b,3,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:44
+claude46_api,P6,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:44
+claude46_api,P6,2,0,TB,0,0,0,0,0,TB compile failed (6 errors),2026-04-21T07:57:44
+claude46_api,P6,3,0,TB,0,0,0,0,0,TB compile failed (9 errors),2026-04-21T07:57:44
+gpt,P1,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P1,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P1,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P2,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P2,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P2,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P3,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:45
+gpt,P3,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:46
+gpt,P3,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:46
+gpt,P4,1,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:46
+gpt,P4,2,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:46
+gpt,P4,3,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:46
+gpt,P5,1,1,TB,1,1,0,8,0,8 tests failed,2026-04-21T07:57:47
+gpt,P5,2,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:47
+gpt,P5,3,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:47
+gpt,P5b,1,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:47
+gpt,P5b,2,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:47
+gpt,P5b,3,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:47
+gpt,P6,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:48
+gpt,P6,2,0,TB,0,0,0,0,0,TB compile failed (7 errors),2026-04-21T07:57:48
+gpt,P6,3,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:48
+gemini,P1,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:48
+gemini,P1,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:48
+gemini,P1,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:49
+gemini,P2,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:49
+gemini,P2,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:49
+gemini,P2,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:49
+gemini,P3,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:49
+gemini,P3,2,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:50
+gemini,P3,3,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:50
+gemini,P4,1,3,RTL,1,0,0,0,0,clean compile (ELAB_ONLY),2026-04-21T07:57:50
+gemini,P4,2,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:50
+gemini,P4,3,0,RTL,0,0,0,0,0,compile fails badly or vcs missing,2026-04-21T07:57:50
+gemini,P5,1,0,TB,0,0,0,0,0,TB compile failed (1 errors),2026-04-21T07:57:51
+gemini,P5,2,1,TB,1,1,0,8,0,8 tests failed,2026-04-21T07:57:51
+gemini,P5,3,1,TB,1,1,0,8,0,8 tests failed,2026-04-21T07:57:51
+gemini,P5b,1,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:51
+gemini,P5b,2,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:51
+gemini,P5b,3,0,TB,0,0,0,0,0,TB compile failed (2 errors),2026-04-21T07:57:52
+gemini,P6,1,0,TB,0,0,0,0,0,TB compile failed (4 errors),2026-04-21T07:57:52
+gemini,P6,2,0,TB,0,0,0,0,0,TB compile failed (6 errors),2026-04-21T07:57:52
+gemini,P6,3,0,TB,0,0,0,0,0,TB compile failed (6 errors),2026-04-21T07:57:52
