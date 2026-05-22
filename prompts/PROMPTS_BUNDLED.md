@@ -16,8 +16,8 @@ Repeat PB 3 times per model (fresh session each). Target: 1 prompt x 5
 conditions x 3 trials = 15 responses.
 
 Models under evaluation (April 2026 frontier):
-  - Claude Opus 4.7 (Anthropic)  -- claude.ai + Bedrock API
-  - Claude Opus 4.6 (Anthropic)  -- Bedrock API only
+  - Claude Opus 4.7 (Anthropic)  -- web UI + cloud-hosted LLM API
+  - Claude Opus 4.6 (Anthropic)  -- cloud-hosted LLM API only
   - GPT-5.2         (OpenAI)     -- chatgpt.com
   - Gemini 3.1 Pro  (Google)     -- gemini.google.com
 

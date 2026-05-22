@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # collect_axi_nocontract_api.py -- Third-DUT (AXI4-Lite) NO-PORT-CONTRACT variant.
-# Collects n=3 Bedrock responses for PS_AXI with the port-contract block
+# Collects n=3 cloud-hosted LLM API responses for PS_AXI with the port-contract block
 # removed (ablation baseline).
 import argparse, os, re, sys, json, time, datetime
 import boto3
@@ -19,9 +19,9 @@ def extract_prompt(md_text, pid):
     return m.group(1).strip()
 
 
-def call_bedrock(client, model_id, prompt_text, max_tokens=16000):
+def call_api(client, model_id, prompt_text, max_tokens=16000):
     body = {
-        "anthropic_version": "bedrock-2023-05-31",
+        "anthropic_version": "api-2023-05-31",
         "max_tokens": max_tokens,
         "temperature": 1.0,
         "messages": [{"role": "user", "content": prompt_text}],
@@ -36,7 +36,7 @@ def call_bedrock(client, model_id, prompt_text, max_tokens=16000):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="us.anthropic.claude-opus-4-7")
+    ap.add_argument("--model", default="<MODEL_ID_4_7>")
     ap.add_argument("--outdir", default="claude_api_nocontract")
     ap.add_argument("--region", default=os.environ.get("AWS_REGION", "us-west-2"))
     args = ap.parse_args()
@@ -50,21 +50,21 @@ def main():
 
     m = args.model
     if not m.startswith("us."):
-        m = "us." + m if m.startswith("anthropic.") else "us.anthropic." + m
+        m = "us." + m if m.startswith("anthropic.") else "<API_PREFIX>." + m
     model_id = m
 
     from botocore.config import Config
     cfg = Config(read_timeout=600, connect_timeout=60,
                  retries={"max_attempts": 3})
-    client = boto3.client("bedrock-runtime", region_name=args.region,
+    client = boto3.client("cloud-runtime", region_name=args.region,
                           config=cfg)
 
     with open(os.path.join(out_root, "model_info.txt"), "w") as f:
-        f.write("bedrock_model_id: " + model_id + "\n")
+        f.write("model_id: " + model_id + "\n")
         f.write("region: " + args.region + "\n")
         f.write("collected: " + datetime.datetime.now().isoformat() + "\n")
         f.write("temperature: 1.0\nmax_tokens: 16000\n")
-        f.write("surface: Bedrock API (boto3)\n")
+        f.write("surface: cloud-hosted LLM API API (boto3)\n")
         f.write("prompt_file: " + PROMPTS_MD + "\n")
         f.write("trials_per_prompt: " + str(len(TRIALS)) + "\n")
         f.write("variant: NO_PORT_CONTRACT (PS_AXI^nc)\n")
@@ -81,7 +81,7 @@ def main():
                 continue
             t0 = time.time()
             try:
-                text = call_bedrock(client, model_id, prompt_text)
+                text = call_api(client, model_id, prompt_text)
             except Exception as e:
                 print("ERROR", pid, "trial", trial, ":", e, file=sys.stderr)
                 continue

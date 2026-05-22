@@ -13,9 +13,9 @@ def extract_prompt(md_text, pid):
         raise RuntimeError("prompt not found: " + pid)                                                                                                                                                          
     return m.group(1).strip()                                                                                                                                                                                   
                                                                                                                     
-def call_bedrock(client, model_id, prompt_text, max_tokens=32000):                                                                                                                                              
+def call_api(client, model_id, prompt_text, max_tokens=32000):                                                                                                                                              
     body = {                                                                                                        
-        "anthropic_version": "bedrock-2023-05-31",                                                                                                                                                              
+        "anthropic_version": "api-2023-05-31",                                                                                                                                                              
         "max_tokens": max_tokens,                                                                                                                                                                               
         "temperature": 1.0,                                                                                                                                                                                     
         "messages": [{"role": "user", "content": prompt_text}],                                                                                                                                                 
@@ -51,20 +51,20 @@ def main():
         if m.startswith("anthropic."):                                                                                                                                                                          
             m = "us." + m
         else:                                                                                                                                                                                                   
-            m = "us.anthropic." + m                                                                                 
+            m = "<API_PREFIX>." + m                                                                                 
     model_id = m                                                                                                                                                                                                
                                                                                                                                                                                                                 
     from botocore.config import Config
-    bedrock_config = Config(read_timeout=600, connect_timeout=60, retries={"max_attempts": 3})
-    client = boto3.client("bedrock-runtime", region_name=args.region, config=bedrock_config)                                                                                                                                           
+    api_config = Config(read_timeout=600, connect_timeout=60, retries={"max_attempts": 3})
+    client = boto3.client("cloud-runtime", region_name=args.region, config=api_config)                                                                                                                                           
                                                                                                                                                                                                                 
     with open(os.path.join(out_root, "model_info.txt"), "w") as f:                                                                                                                                              
-        f.write("bedrock_model_id: " + model_id + "\n")                                                             
+        f.write("model_id: " + model_id + "\n")                                                             
         f.write("region: " + args.region + "\n")                                                                                                                                                                
         f.write("collected: " + datetime.datetime.now().isoformat() + "\n")
         f.write("temperature: 1.0\n")                                                                                                                                                                           
         f.write("max_tokens: 32000\n")                                                                              
-        f.write("surface: Bedrock API (boto3)\n")
+        f.write("surface: cloud-hosted LLM API API (boto3)\n")
                                                                                                                                                                                                                 
     total = len(PROMPT_IDS) * len(TRIALS)                                                                                                                                                                       
     done = 0                                                                                                                                                                                                    
@@ -79,7 +79,7 @@ def main():
                 continue                                                                                                                                                                                        
             t0 = time.time()                                                                                                                                                                                    
             try:                                                                                                                                                                                                
-                text = call_bedrock(client, model_id, prompt_text)                                                  
+                text = call_api(client, model_id, prompt_text)                                                  
             except Exception as e:                                                                                                                                                                              
                 print("[{0}/{1}] ERROR {2} trial {3}: {4}".format(done, total, pid, trial, e), file=sys.stderr)
                 continue                                                                                                                                                                                        

@@ -8,7 +8,7 @@ Anonymous replication package for MLCAD 2026 submission.
 prompts/               Verbatim prompts used across all experiments
   PROMPTS_SPECLOCKED.md    PS variants of P1/P2/P3 (spec-locked port contract)
   PROMPTS_BUNDLED.md        PB (bundled 4-module chip_top)
-  PROMPTS_BUNDLED_LIBAWARE.md   PB' (paraphrased .mdt attribute tags)
+  PROMPTS_BUNDLED_LIBAWARE.md   PB' (paraphrased vendor pad-cell attribute tags (sanitized))
   PROMPTS_BUNDLED_REALPORTS.md  PB'' (toolchain-synthesized stub ports)
 
 responses/
@@ -27,7 +27,7 @@ scores/                Score CSVs referenced in the paper
   scores.csv                        Main 0-3 rubric matrix (legacy, see paper Table per-stage)
 
 scripts/               Collection + scoring scripts
-  collect_*.py          Bedrock API collection (boto3)
+  collect_*.py          cloud LLM API collection
   score_*.sh            VCS compile + stitch-in + sim scoring
 
 reference_design/
@@ -38,8 +38,8 @@ reference_design/
 
 ## Reproducing results
 
-1. API collection requires AWS Bedrock access to
-   `us.anthropic.claude-opus-4-7` and `us.anthropic.claude-opus-4-6-v1`.
+1. API collection requires access to a cloud-hosted LLM API for the two Claude conditions:
+   Claude Opus 4.7 and Claude Opus 4.6.
    Web-UI conditions (Claude 4.7 web, GPT-5.2, Gemini 3.1 Pro) were
    collected by hand through an enterprise gateway; the raw `.sv`
    responses are archived under `responses/main_bscan/speclocked/`

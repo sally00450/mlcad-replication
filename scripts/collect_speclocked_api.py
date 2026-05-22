@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-# collect_speclocked_api.py -- Collect Bedrock responses for the
+# collect_speclocked_api.py -- Collect cloud-hosted LLM API responses for the
 # Spec-Locked prompts (P1_PS, P2_PS, P3_PS). Each prompt = original
 # P1/P2/P3 plus a mandatory PORT CONTRACT section.
 #
 # Usage:
 #   scripts/collect_speclocked_api.py \
-#       --model us.anthropic.claude-opus-4-7 --outdir claude_api
+#       --model <MODEL_ID_4_7> --outdir claude_api
 #   scripts/collect_speclocked_api.py \
-#       --model us.anthropic.claude-opus-4-6-v1 --outdir claude46_api
+#       --model <MODEL_ID_4_6> --outdir claude46_api
 #
 # Responses are written to:
 #   paper/web_ai_eval/responses/speclocked/<outdir>/
@@ -29,9 +29,9 @@ def extract_prompt(md_text, pid):
     return m.group(1).strip()
 
 
-def call_bedrock(client, model_id, prompt_text, max_tokens=32000):
+def call_api(client, model_id, prompt_text, max_tokens=32000):
     body = {
-        "anthropic_version": "bedrock-2023-05-31",
+        "anthropic_version": "api-2023-05-31",
         "max_tokens": max_tokens,
         "temperature": 1.0,
         "messages": [{"role": "user", "content": prompt_text}],
@@ -71,22 +71,22 @@ def main():
         if m.startswith("anthropic."):
             m = "us." + m
         else:
-            m = "us.anthropic." + m
+            m = "<API_PREFIX>." + m
     model_id = m
 
     from botocore.config import Config
-    bedrock_config = Config(read_timeout=600, connect_timeout=60,
+    api_config = Config(read_timeout=600, connect_timeout=60,
                             retries={"max_attempts": 3})
-    client = boto3.client("bedrock-runtime", region_name=args.region,
-                          config=bedrock_config)
+    client = boto3.client("cloud-runtime", region_name=args.region,
+                          config=api_config)
 
     with open(os.path.join(out_root, "model_info.txt"), "w") as f:
-        f.write("bedrock_model_id: " + model_id + "\n")
+        f.write("model_id: " + model_id + "\n")
         f.write("region: " + args.region + "\n")
         f.write("collected: " + datetime.datetime.now().isoformat() + "\n")
         f.write("temperature: 1.0\n")
         f.write("max_tokens: 32000\n")
-        f.write("surface: Bedrock API (boto3)\n")
+        f.write("surface: cloud-hosted LLM API API (boto3)\n")
         f.write("prompt_file: " + PROMPTS_MD + "\n")
         f.write("prompt_ids: " + ",".join(PROMPT_IDS) + "\n")
         f.write("trials_per_prompt: " + str(len(TRIALS)) + "\n")
@@ -107,7 +107,7 @@ def main():
                 continue
             t0 = time.time()
             try:
-                text = call_bedrock(client, model_id, prompt_text)
+                text = call_api(client, model_id, prompt_text)
             except Exception as e:
                 print("[{0}/{1}] ERROR {2} trial {3}: {4}".format(
                     done, total, pid, trial, e), file=sys.stderr)

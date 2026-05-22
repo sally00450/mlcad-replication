@@ -8,7 +8,7 @@ substituted constraint: the port names of `pad_input`, `pad_output`,
 `bsc_cell`, and `tap_controller` MUST match the REAL VCS fixture port
 contract used by the per-module PS prompts (see PROMPTS_SPECLOCKED.md),
 verbatim. This replaces the Tessent pad-library attribute-tag token
-guidance of PB' (pad_pad_io, pad_from_pad, pad_to_pad, pad_enable_high)
+guidance of PB' (proprietary attribute-tag identifiers, withheld)
 with the "normal" engineer-facing names (pad_pin, core_data, oe, etc.).
 
 PB'' answers the reviewer question: what happens on the Tessent side
@@ -21,8 +21,8 @@ Everything else -- the four-module structure, BSR layout, IR encoding,
 TAP FSM, N_IO=10, response format -- is unchanged from PB.
 
 Repeat PB'' 3 times per model (fresh session each).
-  - Claude Opus 4.7 (Bedrock API, us.anthropic.claude-opus-4-7)
-  - Claude Opus 4.6 (Bedrock API, us.anthropic.claude-opus-4-6-v1)
+  - Claude Opus 4.7 (cloud-hosted LLM API, <MODEL_ID_4_7>)
+  - Claude Opus 4.6 (cloud-hosted LLM API, <MODEL_ID_4_6>)
 Target: 1 prompt x 2 models x 3 trials = 6 responses.
 
 ---

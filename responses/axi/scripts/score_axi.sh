@@ -17,9 +17,9 @@ SANDBOX_ROOT="$PILOT/sim/sandbox"
 REF_TB="$PILOT/tb/tb_axi_lite.sv"
 
 VCS_BIN="$(command -v vcs || true)"
-if [ -z "$VCS_BIN" ] && [ -x /ce/vendors/synopsys/vcs/W-2024.09-SP2-2/bin/vcs ]; then
-    VCS_BIN=/ce/vendors/synopsys/vcs/W-2024.09-SP2-2/bin/vcs
-    export PATH="/ce/vendors/synopsys/vcs/W-2024.09-SP2-2/bin:$PATH"
+if [ -z "$VCS_BIN" ] && [ -x <VCS_BIN> ]; then
+    VCS_BIN=<VCS_BIN>
+    export PATH="<VCS_DIR>:$PATH"
 fi
 [ -z "$VCS_BIN" ] && { echo "[ERROR] VCS not found" >&2; exit 2; }
 

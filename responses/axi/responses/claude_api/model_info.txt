@@ -1,9 +1,9 @@
-bedrock_model_id: us.anthropic.claude-opus-4-7
+model_id: <MODEL_ID_4_7>
 region: us-west-2
 collected: 2026-05-04T05:52:49.716500
 temperature: 1.0
 max_tokens: 16000
-surface: Bedrock API (boto3)
+surface: cloud-hosted LLM API
 prompt_file: third_dut_pilot/scripts/../prompts/PROMPTS_AXI.md
 trials_per_prompt: 10
 variant: PORT_CONTRACT (PS_AXI)

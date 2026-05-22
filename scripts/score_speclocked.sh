@@ -25,9 +25,9 @@ SUM_CSV="$REPO/paper/web_ai_eval/speclocked_summary.csv"
 SANDBOX_ROOT="$REPO/sim/speclocked_sandbox"
 
 VCS_BIN="$(command -v vcs || true)"
-if [ -z "$VCS_BIN" ] && [ -x /ce/vendors/synopsys/vcs/W-2024.09-SP2-2/bin/vcs ]; then
-    VCS_BIN=/ce/vendors/synopsys/vcs/W-2024.09-SP2-2/bin/vcs
-    export PATH="/ce/vendors/synopsys/vcs/W-2024.09-SP2-2/bin:$PATH"
+if [ -z "$VCS_BIN" ] && [ -x <VCS_BIN> ]; then
+    VCS_BIN=<VCS_BIN>
+    export PATH="<VCS_DIR>:$PATH"
 fi
 if [ -z "$VCS_BIN" ]; then
     echo "[ERROR] VCS not found" >&2

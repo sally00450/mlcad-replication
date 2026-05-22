@@ -1,9 +1,9 @@
-bedrock_model_id: us.anthropic.claude-opus-4-6-v1
+model_id: <MODEL_ID_4_6>
 region: us-east-1
 collected: 2026-05-06T02:39:35.829464
 temperature: 1.0
 max_tokens: 32000
-surface: Bedrock API (boto3)
+surface: cloud-hosted LLM API
 prompt_file: paper/web_ai_eval/PROMPTS_SPECLOCKED.md
 prompt_ids: P1_PS,P2_PS,P3_PS
 trials_per_prompt: 10
